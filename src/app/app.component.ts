@@ -13,11 +13,17 @@ export class AppComponent {
   oszlopok=["id","name","type"]
   ujAllat:any={}
 
+  adat:any="test";
+  adatok:any=[];
+
   allatok:any = [
     {id:1, name:"Negró",type:"kutyus"},
     {id:2, name:"Pamacs",type:"macska"},
     {id:3, name:"Vilmos",type:"kutyus"},
   ]
+  addAdat(vmi:any){
+    this.adatok.push(vmi);
+  }
   addAnimal(allat:any){
     this.allatok.push(allat);
   }

@@ -1,5 +1,9 @@
-<h1 class="text-center"> Szaszte baktale, {{userName}}</h1>
+<h1 class="text-center" id="welcome"> Szaszte baktale,</h1><h2 class="text-center">{{userName}}</h2>
 <div class="container">
+  <div id="adatok"><p>{{adatok|json}}</p></div>
+  <input #adatInput [(ngModel)]="adat" type="text" class="form-control mb-2" id="adat">
+  <button (click)="addAdat(adatInput.value)" type="button" class="btn btn-primary">Add Adat</button>
+
   <p>{{oszlopok[1]}}</p>
 
   <div *ngIf = "isAdmin" class="row my-3">
@@ -12,7 +16,7 @@
     <div class="col" *ngFor = "let oszlop of oszlopok">
       <input [(ngModel)]="ujAllat[oszlop]" type="text" class="form-control" id="inputAllat">
     </div>
-    <button (click)="addAnimal(ujAllat)" type="button" class="btn col">Add</button>
+    <button (click)="addAnimal(ujAllat)" type="button" class="btn btn-primary col">Add</button>
   </div>
 
   <div class="row my-3" *ngFor="let allat of allatok">
