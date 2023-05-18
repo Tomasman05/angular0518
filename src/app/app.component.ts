@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Kezdetek';
+  title:string = 'Kezdetek'
+  isAdmin=true
+  //MVC Model View Controller
+  userName:string
+  oszlopok=["id","name","type"]
+  ujAllat:any={}
+
+  allatok:any = [
+    {id:1, name:"Negró",type:"kutyus"},
+    {id:2, name:"Pamacs",type:"macska"},
+    {id:3, name:"Vilmos",type:"kutyus"},
+  ]
+  addAnimal(allat:any){
+    this.allatok.push(allat);
+  }
+  constructor(){
+    this.userName="Julcsika"
+  }
 }
